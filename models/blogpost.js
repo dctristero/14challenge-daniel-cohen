@@ -3,15 +3,19 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 // game model to organize the shelf before table gets flipped
-class Comment extends Model {}
+class Blogpost extends Model {}
 
-Comment.init(
+Blogpost.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     body: {
       type: DataTypes.STRING,
@@ -24,20 +28,13 @@ Comment.init(
         key: "id",
       },
     },
-    postID: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "blogpost",
-        key: "id",
-      },
-    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "comment",
+    modelName: "blogpost",
   }
 );
 
-module.exports = Comment;
+module.exports = Blogpost;
