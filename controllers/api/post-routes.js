@@ -4,11 +4,11 @@ const authorize = require("../../utils/authorize");
 
 router.post("/", authorize, async (req, res) => {
    try {
-     const newPost = await Blogpost.create({
+     const post = await Blogpost.create({
        ...req.body,
        userID: req.session.user_id
      });
-     res.status(200).json(newPost);
+     res.status(200).json(post);
    } catch (err) {
      res.status(400).json(err);
    }
