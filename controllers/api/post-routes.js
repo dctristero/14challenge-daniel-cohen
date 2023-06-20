@@ -15,7 +15,6 @@ router.post("/", authorize, async (req, res) => {
 });
 
 router.put('/:id', authorize, (req, res) => {
-   // update a category by its `id` value
    try { const updated = Blogpost.update({
          ...req.body,
          userID: req.session.user_id

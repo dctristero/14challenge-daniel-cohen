@@ -1,8 +1,8 @@
-const router = require('express').Router();
-const { Comment } = require('../../models/');
-const authorize = require('../../utils/authorize');
+const router = require("express").Router();
+const { Comment } = require("../../models/");
+const authorize = require("../../utils/authorize");
 
-router.post('/', authorize, async (req, res) => {
+router.post("/", authorize, async (req, res) => {
   try {
     const comment = await Comment.create({
       ...req.body,

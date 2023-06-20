@@ -1,10 +1,8 @@
 const router = require("express").Router();
 const { User, Blogpost, Comment } = require("../models");
 
-// pulls the user's games to display on the shelf once logged in
 router.get("/", async (req, res) => {
   try {
-    // Find the logged in user based on the session ID and return their shelf data
     const blogPosts = await Blogpost.findAll({
       include: [{ model: User }],
     });
@@ -18,7 +16,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// pulls specific game on the shelf data to render in isolation once teh user is logged in
 router.get("/post/:id", async (req, res) => {
   try {
     const bpData = await Blogpost.findByPk(req.params.id, {
@@ -36,13 +33,11 @@ router.get("/post/:id", async (req, res) => {
     res.render("post", {
       ...blogPost
     });
-    // tells what error occurred
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// check for log in and authorize and redirect or move along
 router.get("/login", (req, res) => {
   res.render("login");
 });
@@ -57,14 +52,19 @@ router.get("/list", async (req, res) => {
   res.json(users);
 });
 
-// route for reviewing all games - not accessible through user interface
-router.get("/box", async (req, res) => {
-  const gameData = await Game.findAll().catch((err) => {
-    res.json(err);
-  });
-  const games = gameData.map((game) => game.get({ plain: true }));
+// route for reviewing all games OR SOMETHING - not accessible through user interface
+// router.get("/box", async (req, res) => {
+//   const gameData = await Game.findAll().catch((err) => {
+//     res.json(err);
+//   });
+//   const games = gameData.map((game) => game.get({ plain: true }));
 
-  res.json(games);
-});
+//   res.json(games);
+// });
+
+router.get('/signup', (req, res) => {
+   res.render('signup');
+ });
+
 
 module.exports = router;
