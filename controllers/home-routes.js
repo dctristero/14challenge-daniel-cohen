@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
     });
     const allPosts = blogPosts.map((bp) => bp.get({ plain: true }));
     res.render("reader-home", {
+      layout: "main",
       allPosts
     });
   } catch (err) {
@@ -31,6 +32,7 @@ router.get("/post/:id", async (req, res) => {
     });
     const blogPost = bpData.get({ plain: true });
     res.render("post", {
+      layout: "main",
       ...blogPost
     });
   } catch (err) {
@@ -64,7 +66,7 @@ router.get("/list", async (req, res) => {
 
 router.get('/signup', (req, res) => {
    res.render('signup');
- });
+});
 
 
 module.exports = router;
