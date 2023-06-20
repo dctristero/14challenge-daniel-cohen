@@ -36,7 +36,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers/'));
+app.use(routes);
+
+// use force true for the first time running it and then change it to false
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);

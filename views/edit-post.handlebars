@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Text Blog</title>
+</head>
+
+<div class="post card">
+  <header class="card-header">
+    <h2 class="card-header-title">Edit Post</h2>
+  </header>
+  <form id="edit-post-form" class="card-content">
+    <input type="hidden" name="post-id" value="{{post.id}}" />
+
+    <div class="field">
+      <label class="label" for="post-title">Title</label>
+      <div class="control">
+        <input type="text" name="post-title" value="{{post.title}}" class="input" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="post-body">Content</label>
+      <div class="control">
+        <textarea name="post-body" class="textarea">{{post.body}}</textarea>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button type="submit" class="button is-primary">Update</button>
+      </div>
+      <div class="control">
+        <button type="button" id="delete-btn" class="button is-danger">Delete</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script src=""></script>
