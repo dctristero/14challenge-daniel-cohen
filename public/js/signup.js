@@ -5,7 +5,7 @@ const createUser = async (event) => {
    const password = document.querySelector("#password-input-signup").value.trim();
    // make sure new user not a clone
    if (username && password) {
-     const response = await fetch("/api/users/", {
+     const response = await fetch("/api/users/signup", {
        method: "POST",
        body: JSON.stringify({ username, password }),
        headers: { "Content-Type": "application/json" },

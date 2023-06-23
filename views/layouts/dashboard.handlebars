@@ -41,12 +41,9 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-danger">
+          <button id="logout" type="button" class="button is-primary">
             Log Out
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -56,7 +53,7 @@
 <section class="hero is-primary">
   <div class="hero-body">
     <h1 class="title is-1">
-      <a href="/dashboard">Your Dashboard</a>
+      <a href="/dashboard/user-home">Your Dashboard</a>
     </h1>
   </div>
 </section>
@@ -71,8 +68,8 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-narrow">
-        <a href="/dashboard/new" class="button is-primary">
-          <span>New Post</span>
+        <a href="/dashboard/write-post" class="button is-primary">
+          <span>Write a post!</span>
         </a>
       </div>
     </div>
@@ -80,4 +77,4 @@
 </footer>
 </body>
 
-<script scr="./js/logout.js"></script>
+<script src="/js/logout.js"></script>

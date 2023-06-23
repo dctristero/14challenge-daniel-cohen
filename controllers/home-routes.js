@@ -4,13 +4,10 @@ const { User, Blogpost, Comment } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const blogPosts = await Blogpost.findAll({
-      include: [{ model: User }],
+      include: [User],
     });
-    const allPosts = blogPosts.map((bp) => bp.get({ plain: true }));
-    res.render("reader-home", {
-      layout: "main",
-      allPosts
-    });
+    const everyPost = blogPosts.map((bp) => bp.get({ plain: true }));
+    res.render("reader-home", { everyPost });
   } catch (err) {
    console.log(err);
     res.status(500).json(err);
@@ -31,7 +28,7 @@ router.get("/post/:id", async (req, res) => {
       ],
     });
     const blogPost = bpData.get({ plain: true });
-    res.render("post", {
+    res.render("one-post", {
       layout: "main",
       ...blogPost
     });

@@ -8,9 +8,11 @@ const logout = async () => {
    if (response.ok) {
      document.location.replace("/");
    } else {
-     alert(response.statusText);
+     alert("you are my prisoner");
    }
  };
  
  // review view port to find appropriate locations to listen in order to execute function
- document.querySelector("#logout").addEventListener("click", logout);
+ document
+ .querySelector('#logout')
+ .addEventListener('click', logout);
