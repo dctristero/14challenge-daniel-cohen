@@ -30,7 +30,7 @@ router.get("/post/:id", async (req, res) => {
     const blogPost = bpData.get({ plain: true });
     res.render("one-post", {
       layout: "main",
-      ...blogPost
+      blogPost,
     });
   } catch (err) {
     res.status(500).json(err);

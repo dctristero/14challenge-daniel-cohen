@@ -1,26 +1,27 @@
 <div class="post">
   <article class="card">
     <header class="card-header flex-row justify-space-between">
-      <h2>{{post.title}}</h2>
+      <h2>{{blogPost.title}}</h2>
       <div>
-        Posted by {{post.User.username}} on {{format_date post.createdAt}}
+        Posted by {{blogPost.User.username}} on 
+        {{!-- {{format_date blogPost.createdAt}} --}}
       </div>
     </header>
     <div class="card-content">
       <div class="content">
-        {{post.body}}
+        {{blogPost.body}}
       </div>
     </div>
   </article>
 
-  {{#if post.Comments}}
+  {{#if blogPost.Comments}}
     <section class="card">
       <header class="card-header">
         <h3>Comments</h3>
       </header>
 
       <div class="card-content">
-        {{#each post.Comments}}
+        {{#each blogPost.Comments}}
           <div>
             <p>
               {{body}}
@@ -40,7 +41,7 @@
     </header>
 
     <div class="card-content">
-      <input type="hidden" id="post-id" name="post-id" value="{{post.id}}" />
+      <input type="hidden" id="post-id" name="post-id" value="{{blogPost.id}}" />
 
       <div class="field">
         <label class="label" for="comment-body">Comment</label>
