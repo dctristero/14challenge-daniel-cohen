@@ -3,7 +3,7 @@
     <header class="card-header flex-row justify-space-between">
       <h2>{{blogPost.title}}</h2>
       <div>
-        Posted by {{blogPost.User.username}} on 
+        Posted by {{blogPost.user.username}} on 
         {{!-- {{format_date blogPost.createdAt}} --}}
       </div>
     </header>
@@ -14,14 +14,14 @@
     </div>
   </article>
 
-  {{#if blogPost.Comments}}
+  {{#if blogPost.comments}}
     <section class="card">
       <header class="card-header">
         <h3>Comments</h3>
       </header>
 
       <div class="card-content">
-        {{#each blogPost.Comments}}
+        {{#each blogPost.comments}}
           <div>
             <p>
               {{body}}

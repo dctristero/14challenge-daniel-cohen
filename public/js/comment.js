@@ -8,7 +8,7 @@ const makeComment = async function(event) {
      method: 'POST',
      body: JSON.stringify({
        postID,
-       commentText,
+       body: commentText,
      }),
      headers: { 'Content-Type': 'application/json' },
    });

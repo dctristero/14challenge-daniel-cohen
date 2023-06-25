@@ -3,19 +3,19 @@
     <h2 class="card-header-title">Edit Post</h2>
   </header>
   <form id="edit-post-form" class="card-content">
-    <input type="hidden" name="post-id" value="{{post.id}}" />
+    <input type="hidden" name="post-id" value="{{blogPost.id}}" />
 
     <div class="field">
       <label class="label" for="post-title">Title</label>
       <div class="control">
-        <input id="post-title" type="text" name="post-title" value="{{post.title}}" class="input" />
+        <input id="post-title" type="text" name="post-title" value="{{blogPost.title}}" class="input" />
       </div>
     </div>
 
     <div class="field">
       <label class="label" for="post-body">Content</label>
       <div class="control">
-        <input id="post-body" name="post-body" class="textarea">{{post.body}}</input>
+        <textarea id="post-body" name="post-body" class="textarea" >{{blogPost.body}}</textarea>
       </div>
     </div>
 
