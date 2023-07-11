@@ -4,7 +4,6 @@ const authorize = require("../utils/authorize");
 
 router.get("/user-home", authorize, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID and return their shelf data
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Blogpost }],
@@ -15,7 +14,6 @@ router.get("/user-home", authorize, async (req, res) => {
       ...user,
       logged_in: true,
     });
-    // tells what error occurred
   } catch (err) {
     res.status(500).json(err);
   }
