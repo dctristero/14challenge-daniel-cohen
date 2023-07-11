@@ -7,7 +7,9 @@ router.get("/", async (req, res) => {
       include: [User],
     });
     const everyPost = blogPosts.map((bp) => bp.get({ plain: true }));
-    res.render("reader-home", { everyPost });
+    res.render("reader-home", { 
+      layout: "main",
+      everyPost });
   } catch (err) {
    console.log(err);
     res.status(500).json(err);
@@ -28,10 +30,9 @@ router.get("/post/:id", async (req, res) => {
     });
     const blogPost = bpData.get({ plain: true });
     console.log(blogPost)
-    res.render("one-post", {
+   res.render("one-post", { 
       layout: "main",
-      blogPost,
-    });
+      blogPost });
   } catch (err) {
     res.status(500).json(err);
   }

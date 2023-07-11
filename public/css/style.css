@@ -15,7 +15,7 @@
    background-color: var(--primary);
    margin: 0;
    padding: 0;
-   font-family: "IBM Plex Sans", sans-serif;
+   font-family: "Josefin Sans"
    color: var(--dark);
    line-height: 1.5;
    font-size: 16px;
@@ -33,9 +33,7 @@
    line-height: 1.25;
  }
  
- h2 a:visited {
-   color: var(--tertiary);
- }
+
  
  h2 a {
    color: var(--primary);
@@ -65,10 +63,7 @@
      margin: 0 0 5px;
      padding: 10px;
  }
- 
- .card-header h2 {
-   color: var(--primary);
- }
+
 
  .main-color {
    color: #d0fafa;
@@ -126,8 +121,6 @@
  
  .hero {
    padding: 3% 4%;
-   background-color: var(--dark);
-   color: var(--primary);
  }
  
  .hero p {
@@ -177,14 +170,13 @@
  
  /* CARDS */
  .card {
-   margin: 0 0 20px 0;
+   /* margin: 0 0 20px 0 !important;
    border: 3px solid var(--dark);
    border-radius: var(--border-radius);
+   padding: 0 !important; */
  }
  
  .card-header {
-   color: var(--primary);
-   background-color: var(--dark);
    padding: 1%;
    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
  }
