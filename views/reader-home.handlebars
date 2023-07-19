@@ -1,11 +1,11 @@
 <div class="posts">
   {{#each everyPost}}
     <article class="card">
-      <header class="card-header main-color flex-row justify-space-between">
+      <header class="padding main-color flex-row spread">
         <h2 class="main-color">
           <a class="main-color" href="post/{{id}}">{{title}}</a>
         </h2>
-        <div class="card-header-item">
+        <div class="padding-item">
           Posted by {{User.username}} on {{format_date createdAt}}
         </div>
       </header>
